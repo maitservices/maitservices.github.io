@@ -32,10 +32,15 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    .social-header a {
-      margin-right: 0.5rem;
+    
+    /* Configuração da Logo no Header */
+    .site-logo {
+      width: 200px;
+      height: 200px;
+      object-fit: contain; /* Evita que a imagem distorça */
+      transition: all 0.3s ease;
     }
-    .social-header img,
+
     .whatsapp-link img {
       width: 28px;
       height: 28px;
@@ -45,6 +50,7 @@
       text-align: center;
       font-size: 1.2rem;
     }
+
     @media (min-width: 768px) {
       .site-title {
         font-size: 1.8rem;
@@ -54,174 +60,176 @@
         font-size: 1.2rem;
       }
     }
+
     /* Container Principal com efeito de vidro */
-.glass-card {
-  position: relative;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.65); /* Fundo escuro transparente */
-  backdrop-filter: blur(12px);      /* Desfoque do fundo */
-  padding: 3rem;                    /* Espaço interno */
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  max-width: 1000px;
-  width: 90%;
-  
-  /* FLEXBOX: A mágica do alinhamento */
-  display: flex;
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center;
-  gap: 4rem; /* Aumentei o espaço entre imagem e texto conforme pedido */
-}
+    .glass-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(12px);
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      max-width: 1000px;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+    }
 
-/* Estilo da Imagem (O print do código) */
-.feature-image {
-  width: 100%;
-  max-width: 450px; /* Limita o tamanho para não estourar */
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* Sombra para destacar o print */
-  transition: transform 0.3s ease;
-}
+    .feature-image {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
 
-/* Efeito ao passar o mouse na imagem (opcional) */
-.feature-image:hover {
-  transform: scale(1.02);
-}
+    .feature-image:hover {
+      transform: scale(1.02);
+    }
 
-/* Tipografia */
-.text-content {
-  text-align: left;
-  color: white;
-  flex: 1; /* Ocupa o espaço restante */
-}
+    .text-content {
+      text-align: left;
+      color: white;
+      flex: 1;
+    }
 
-.text-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
+    .text-content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
 
-.text-content p {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #e0e0e0;
-}
+    .text-content p {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #e0e0e0;
+    }
 
-/* --- RESPONSIVIDADE (Mobile) --- */
-@media (max-width: 900px) {
-  .glass-card {
-    flex-direction: column; /* Empilha: Imagem em cima, texto embaixo */
-    gap: 2rem; /* Reduz o espaço no mobile */
-    padding: 2rem;
-    text-align: center; /* Centraliza texto no mobile */
-  }
+    /* --- RESPONSIVIDADE (Mobile) --- */
+    @media (max-width: 900px) {
+      .glass-card {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+        text-align: center;
+      }
 
-  .text-content {
-    text-align: center; /* Garante alinhamento central no mobile */
-  }
+      .text-content {
+        text-align: center;
+      }
 
-  .feature-image {
-    max-width: 100%; /* Imagem ocupa a largura disponível no celular */
-  }
-  
-  .text-content h1 {
-    font-size: 2rem; /* Fonte menor no celular */
-  }
-}
-section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  color: white; /* Garante que o texto seja branco por padrão */
-}
+      .feature-image {
+        max-width: 100%;
+      }
+      
+      .text-content h1 {
+        font-size: 2rem;
+      }
 
-/* Camada de Sobreposição (Overlay) */
-section::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Gradiente ou cor sólida para dar contraste ao texto */
-  background: rgba(24, 24, 24, 0.6); 
-  z-index: 1;
-}
+      /* Ajuste da logo para dispositivos móveis para não estourar o header */
+      .site-logo {
+        width: 80px; 
+        height: auto;
+      }
+    }
 
-video.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  /* Removi a opacity direta para o vídeo não ficar "lavado" */
-}
+    section {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: white;
+    }
 
-.content {
-  position: relative;
-  z-index: 2; /* Fica acima do overlay (z-index 1) */
-  background: rgba(255, 255, 255, 0.1); /* Um leve vidro para sofisticação */
-  backdrop-filter: blur(10px); /* Efeito de desfoque atrás do card */
-  padding: 2.5rem;
-  border-radius: 16px;
-  max-width: 800px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  text-align: center;
-}
+    section::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(24, 24, 24, 0.6); 
+      z-index: 1;
+    }
 
-.content h1 {
-  margin-top: 0;
-  font-size: 2.5rem;
-}
+    video.bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
 
-.content ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 1.5rem;
-}
+    .content {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem;
+      border-radius: 16px;
+      max-width: 800px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
 
-.content li {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-.web-dev-section {
-  background: 
-    linear-gradient(135deg, #f4f4f4, #ffffff), /* cor de fundo quase branca */
-    url('https://www.transparenttextures.com/patterns/graph-paper.png'); /* textura leve */
-  background-blend-mode: overlay;
-  color: black; /* cor de texto preta para contraste */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 1rem;
-  min-height: 100vh;
-  text-align: center;
-}
+    .content h1 {
+      margin-top: 0;
+      font-size: 2.5rem;
+    }
 
-  .web-dev-section .content {
-    max-width: 700px;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 2rem;
-    border-radius: 16px;
-    backdrop-filter: blur(5px);
-  }
+    .content ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
+    }
 
-  .web-dev-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
+    .content li {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
 
-  .web-dev-section p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
+    .web-dev-section {
+      background: 
+        linear-gradient(135deg, #f4f4f4, #ffffff),
+        url('https://www.transparenttextures.com/patterns/graph-paper.png');
+      background-blend-mode: overlay;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1rem;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .web-dev-section .content {
+      max-width: 700px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2rem;
+      border-radius: 16px;
+      backdrop-filter: blur(5px);
+    }
+
+    .web-dev-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .web-dev-section p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
     footer {
       background: rgba(0, 0, 0, 0.7);
       color: white;
@@ -229,19 +237,28 @@ video.bg-video {
       padding: 1.5rem 1rem;
       font-size: 0.9rem;
     }
+
     .social-links {
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem; /* Aumentado o espaço para separar as redes do texto */
     }
+
     .social-links a {
       margin: 0 0.5rem;
       display: inline-block;
       text-decoration: none !important;
     }
+
     .social-links img {
       width: 28px;
       height: 28px;
       vertical-align: middle;
+      transition: transform 0.3s ease;
     }
+    
+    .social-links img:hover {
+      transform: scale(1.1);
+    }
+
     .social-links a:hover {
       text-decoration: none !important;
     }
@@ -251,17 +268,13 @@ video.bg-video {
 
   <header>
     <div class="header-container">
-      <div class="social-header">
-        <a href="https://www.instagram.com/muriloaoliveiraoficial/" target="_blank" aria-label="Instagram">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-        </a>
-        
-        <a href="https://www.linkedin.com/in/murilo-augusto-de-oliveira-34665130/" target="_blank" aria-label="linkedin">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin">
-        </a>
-
+      <div class="logo-container">
+        <!-- Logo adicionada aqui no lugar dos ícones sociais -->
+        <img src="images/mairservices-logo.png" alt="MA IT Services Logo" class="site-logo">
       </div>
+      
       <h1 class="site-title">MAITSERVICES Tecnologia & Serviços</h1>
+      
       <a href="https://wa.me/5541991042120" target="_blank" class="whatsapp-link" aria-label="Fale conosco no WhatsApp">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
       </a>
@@ -289,7 +302,7 @@ video.bg-video {
       Seu navegador não suporta vídeos HTML5.
     </video>
 
-    <div class="glass-card" style="aling:center">
+    <div class="glass-card" style="text-align:center">
       <div class="text-content">
         <h1>WebSite + IA = Mais Resultado</h1>
         <span>
@@ -305,14 +318,14 @@ video.bg-video {
           </p>
           <br/>
           <p>
-            Mais tempo para <span><b>FOCAR no seu NEGÒCIO</b></span>.
+            Mais tempo para <span><b>FOCAR no seu NEGÓCIO</b></span>.
           </p>
         </span>
-          
       </div>
     </div>
   </section>
-<section>
+
+  <section>
     <video class="bg-video" autoplay muted loop playsinline>
       <source src="movies/lojachat.mp4" type="video/mp4" />
       Seu navegador não suporta vídeos HTML5.
@@ -328,8 +341,18 @@ video.bg-video {
       </ul>
     </div>
   </section>
+  
   <footer>
+    <!-- Ícones do Instagram e LinkedIn movidos para o rodapé -->
     <div class="social-links">
+      <a href="https://www.instagram.com/muriloaoliveiraoficial/" target="_blank" aria-label="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
+      
+      <a href="https://www.linkedin.com/in/murilo-augusto-de-oliveira-34665130/" target="_blank" aria-label="linkedin">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin">
+      </a>
+    </div>
     <p>&copy; webpage desenvolvida por Murilo Augusto de Oliveira.</p>
   </footer>
 
