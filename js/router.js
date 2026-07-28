@@ -1,9 +1,9 @@
 // O dicionário de rotas (Mapeia o nome do menu para o arquivo HTML real)
 const routes = {
-  'home': '/webpage/views/home.html',
-  'agent': '/webpage/views/agent.html',
-  'catalog': '/webpage/views/catalog.html',
-  'connection': '/webpage/views/connection.html'
+  'home': '/views/home.html',
+  'agent': '/views/agent.html',
+  'catalog': '/views/catalog.html',
+  'connection': '/views/connection.html'
 };
 
 async function navigateTo(viewName) {
